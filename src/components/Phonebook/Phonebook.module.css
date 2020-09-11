@@ -1,0 +1,56 @@
+.notify {
+  text-align: center;
+  height: 36px;
+}
+
+.notify_light {
+  composes: notify;
+  color: rgb(33, 33, 33);
+}
+
+.notify_dark {
+  composes: notify;
+  color: rgb(255, 255, 210);
+}
+
+.phonebook {
+  margin: 0 auto;
+  padding: 20px 0;
+  min-width: 300px;
+  max-width: 768px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.phonebook_light {
+  composes: phonebook;
+  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0);
+  background-color: rgb(255, 255, 210);
+}
+
+.phonebook_dark {
+  composes: phonebook;
+  box-shadow: 0px 0px 20px 0px rgb(255, 255, 210);
+  background-color: rgb(0, 100, 100);
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.title_light {
+  composes: title;
+  color: rgb(33, 33, 33);
+}
+
+.title_dark {
+  composes: title;
+  color: rgb(255, 255, 210);
+}
+
+.border_top {
+  border-top: 2px solid rgb(155, 155, 155);
+  margin-bottom: 15px;
+}

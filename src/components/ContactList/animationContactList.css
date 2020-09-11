@@ -1,0 +1,21 @@
+.ListItem-slideIn-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.ListItem-slideIn-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 350ms linear;
+}
+
+.ListItem-slideIn-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ListItem-slideIn-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 350ms linear;
+}

@@ -1,0 +1,85 @@
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 150ms ease-in 0;
+  margin-bottom: 10px;
+}
+
+.switch__icon {
+  height: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.icon_light {
+  composes: switch__icon;
+  color: rgb(33, 33, 33);
+}
+
+.icon_dark {
+  composes: switch__icon;
+  color: rgb(255, 255, 210);
+}
+
+.custom_switch {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  position: relative;
+  width: 64px;
+  height: 26px;
+  border-radius: 50em;
+  padding: 3px 0;
+}
+
+.custom_switch__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  border-radius: inherit;
+  z-index: 1;
+  transition: background-color 150ms;
+  cursor: pointer;
+}
+
+.label_light {
+  composes: custom_switch__label;
+  background-color: rgb(180, 180, 180);
+  border: 1px solid rgb(33, 33, 33);
+}
+
+.label_dark {
+  composes: custom_switch__label;
+  background-color: rgb(80, 80, 80);
+  border: 1px solid rgb(255, 255, 210);
+}
+
+.custom_switch__marker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  left: 3px;
+  transition: left 200ms;
+  will-change: left;
+}
+
+.marker_light {
+  composes: custom_switch__marker;
+  background-color: rgb(33, 33, 33);
+  transform: translateX(0);
+}
+
+.marker_dark {
+  composes: custom_switch__marker;
+  background-color: rgb(255, 255, 210);
+  transform: translateX(38px);
+}

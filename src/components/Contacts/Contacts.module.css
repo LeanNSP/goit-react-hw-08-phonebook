@@ -1,0 +1,20 @@
+.title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.title_light {
+  composes: title;
+  color: rgb(33, 33, 33);
+}
+
+.title_dark {
+  composes: title;
+  color: rgb(255, 255, 210);
+}
+
+.spinner {
+  width: 30px;
+  margin: 0 auto;
+}

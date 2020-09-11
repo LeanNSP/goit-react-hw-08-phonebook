@@ -1,0 +1,54 @@
+.Phonebook-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(1.2) translateY(5vh);
+}
+
+.Phonebook-slideIn-appear-done {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 350ms linear;
+}
+
+.Title-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(2);
+}
+
+.Title-slideIn-appear-done {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 350ms linear;
+}
+
+.Switch-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.Switch-slideIn-appear-done {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 350ms linear;
+}
+
+.NotifyError-slideIn-enter {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.NotifyError-slideIn-enter-active {
+  opacity: 1;
+  transform: scale(1) translateX(-50%);
+  transition: all 350ms linear;
+}
+
+.NotifyError-slideIn-exit {
+  opacity: 1;
+  transform: scale(1) translateX(-50%);
+}
+
+.NotifyError-slideIn-exit-active {
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 350ms linear;
+}
