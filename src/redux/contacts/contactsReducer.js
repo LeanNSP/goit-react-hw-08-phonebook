@@ -1,16 +1,16 @@
 import { combineReducers } from "redux";
 import { createReducer } from "@reduxjs/toolkit";
 
-import contactsActions from "./contactsActions";
+import { contactsActions } from "./";
 
-const addContact = (items, action) => {
-  return [...items, action.payload];
+const addContact = (items, { payload }) => {
+  return [...items, payload];
 };
 
-const fetchContacts = (_, action) => action.payload;
+const fetchContacts = (_, { payload }) => payload;
 
-const removeContact = (items, action) => {
-  return items.filter((contact) => contact.id !== action.payload);
+const removeContact = (items, { payload }) => {
+  return items.filter((contact) => contact.id !== payload);
 };
 
 const itemsReducer = createReducer([], {
@@ -20,8 +20,7 @@ const itemsReducer = createReducer([], {
 });
 
 const filterReducer = createReducer("", {
-  [contactsActions.filterInputsChangeHandler]: (state, action) =>
-    action.payload,
+  [contactsActions.filterInputsChangeHandler]: (_, { payload }) => payload,
 });
 
 const loadingContactReducer = createReducer(false, {

@@ -2,8 +2,7 @@ import { connect } from "react-redux";
 
 import Switch from "./Switch";
 
-import themeOperations from "../../redux/theme/themeOperations";
-import themeSelectors from "../../redux/theme/themeSelectors";
+import { themeActions, themeSelectors } from "../../redux/theme";
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +11,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  onToggleTheme: themeOperations.toggleTheme,
+  onToggleTheme: themeActions.toggleTheme,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Switch);

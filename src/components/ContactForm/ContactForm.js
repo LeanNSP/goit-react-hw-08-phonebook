@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import styles from "./ContactForm.module.css";
 import "./animationContactForm.css";
 
-const ContactForm = ({ name, phone, theme, onSubmit, onChange }) => {
+const ContactForm = ({ name, number, theme, onSubmit, onChange }) => {
   const labelClass = theme === "light" ? styles.label_light : styles.label_dark;
   const inputClass = theme === "light" ? styles.input_light : styles.input_dark;
   const initBtnClasses = [styles.button];
@@ -44,10 +44,10 @@ const ContactForm = ({ name, phone, theme, onSubmit, onChange }) => {
                   className={inputClass}
                   type="tel"
                   placeholder="Enter phone*"
-                  name="phone"
+                  name="number"
                   pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
                   required
-                  value={phone}
+                  value={number}
                   onChange={({ target }) => onChange(target)}
                 />
                 <small className={styles.small}>*Format: 123-45-67</small>
@@ -73,7 +73,7 @@ const ContactForm = ({ name, phone, theme, onSubmit, onChange }) => {
 
 ContactForm.propTypes = {
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,

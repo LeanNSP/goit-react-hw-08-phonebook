@@ -1,18 +1,3 @@
-.notify {
-  text-align: center;
-  height: 36px;
-}
-
-.notify_light {
-  composes: notify;
-  color: rgb(33, 33, 33);
-}
-
-.notify_dark {
-  composes: notify;
-  color: rgb(255, 255, 210);
-}
-
 .phonebook {
   margin: 0 auto;
   padding: 20px 0;

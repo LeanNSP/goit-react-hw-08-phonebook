@@ -2,14 +2,14 @@ import { connect } from "react-redux";
 
 import Contacts from "./Contacts";
 
-import contactsSelector from "../../redux/contacts/contactsSelectors";
-import themeSelectors from "../../redux/theme/themeSelectors";
+import { contactsSelectors } from "../../redux/contacts";
+import { themeSelectors } from "../../redux/theme";
 
 const mapStateToProps = (state) => {
   return {
-    contacts: contactsSelector.getContacts(state),
+    contacts: contactsSelectors.getContacts(state),
     theme: themeSelectors.getTheme(state),
-    isLoadingContact: contactsSelector.getLoadingContact(state),
+    isLoadingContact: contactsSelectors.getLoadingContact(state),
   };
 };
 

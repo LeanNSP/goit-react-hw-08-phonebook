@@ -11,7 +11,7 @@ const Filter = ({ contacts, filter, theme, onChange }) => {
 
   return (
     <CSSTransition
-      in={contacts.length > 1}
+      in={contacts.length > 0}
       classNames="Filter-slideIn"
       timeout={350}
       unmountOnExit
@@ -33,9 +33,9 @@ const Filter = ({ contacts, filter, theme, onChange }) => {
 Filter.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ).isRequired,
   filter: PropTypes.string.isRequired,

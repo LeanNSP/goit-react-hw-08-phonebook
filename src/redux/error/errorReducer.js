@@ -1,10 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import contactsActions from "../contacts/contactsActions";
-import themeActions from "../theme/themeActions";
-import errorAction from "./errorAction";
+// import authActions from "../auth/authActions";
+import { contactsActions } from "../contacts";
+import { themeActions } from "../theme";
+import { errorAction } from "./";
 
-const openNotifyError = (error, action) => (error = action.payload);
+const openNotifyError = (error, { payload }) => (error = payload);
 
 const errorReducer = createReducer(null, {
   [contactsActions.fetchContactsError]: openNotifyError,

@@ -1,16 +1,13 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import themeActions from "./themeActions";
+import { themeActions } from "./";
 
-import toggleNameTheme from "../../services/toggleNameTheme";
-
-const toggleTheme = (theme, _) => toggleNameTheme(theme);
-
-const fetchTheme = (theme, action) => (theme = action.payload);
+const toggleTheme = (theme) => {
+  return theme === "light" ? "dark" : "light";
+};
 
 const themeReducer = createReducer("light", {
-  [themeActions.toggleThemeSuccess]: toggleTheme,
-  [themeActions.fetchThemeSuccess]: fetchTheme,
+  [themeActions.toggleTheme]: toggleTheme,
 });
 
 export default themeReducer;

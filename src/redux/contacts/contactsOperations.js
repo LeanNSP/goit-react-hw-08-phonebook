@@ -1,4 +1,4 @@
-import contactsActions from "./contactsActions";
+import { contactsActions } from "./";
 
 import fetchDB from "../../services/fetchDB";
 

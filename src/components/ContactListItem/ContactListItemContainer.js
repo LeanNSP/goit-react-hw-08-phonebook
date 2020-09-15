@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 
 import ContactListItem from "./ContactListItem";
 
-import contactsOperations from "../../redux/contacts/contactsOperations";
-import contactsSelectors from "../../redux/contacts/contactsSelectors";
-import themeSelectors from "../../redux/theme/themeSelectors";
+import { contactsOperations, contactsSelectors } from "../../redux/contacts";
+import { themeSelectors } from "../../redux/theme";
 
 const mapStateToProps = (state, ownProps) => {
   const item = contactsSelectors.getContactById(state, ownProps.id);

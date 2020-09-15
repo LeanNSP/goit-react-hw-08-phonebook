@@ -4,30 +4,31 @@ import PropTypes from "prop-types";
 
 import App from "./App";
 
-import contactsOperations from "../redux/contacts/contactsOperations";
-import themeOperations from "../redux/theme/themeOperations";
-import themeSelectors from "../redux/theme/themeSelectors";
+import { contactsOperations } from "../redux/contacts";
+import { themeSelectors } from "../redux/theme";
+import { authOperation } from "../redux/auth";
 
 class AppContainer extends Component {
   static propTypes = {
     theme: PropTypes.string.isRequired,
     onFetchContacts: PropTypes.func.isRequired,
-    onFetchTheme: PropTypes.func.isRequired,
+    onGetCurrentUser: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.props.onFetchContacts();
-    this.props.onFetchTheme();
+    const { onGetCurrentUser, onFetchContacts } = this.props;
+    onGetCurrentUser(onFetchContacts);
+    // this.props.onFetchContacts();
   }
 
   render() {
-    const { theme } = this.props;
+    const { theme, isAuthenticated } = this.props;
 
-    return <App theme={theme} />;
+    return <App theme={theme} isAuthenticated={isAuthenticated} />;
   }
 }
 
-const mapStateDispatchToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     theme: themeSelectors.getTheme(state),
   };
@@ -35,10 +36,7 @@ const mapStateDispatchToProps = (state) => {
 
 const mapDispatchToProps = {
   onFetchContacts: contactsOperations.fetchContacts,
-  onFetchTheme: themeOperations.fetchTheme,
+  onGetCurrentUser: authOperation.getCurrentUser,
 };
 
-export default connect(
-  mapStateDispatchToProps,
-  mapDispatchToProps
-)(AppContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

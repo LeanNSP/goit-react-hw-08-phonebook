@@ -1,11 +1,20 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3100";
+axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com";
+
+export const tokenToHeader = {
+  set(token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  },
+  unset() {
+    axios.defaults.headers.common["Authorization"] = "";
+  },
+};
 
 /*
  * Create data base item
  */
-const post = (url, item) =>
+const post = (url, item = null) =>
   axios
     .post(url, item)
     .then(({ data }) => data)
@@ -25,17 +34,6 @@ const get = (url) =>
     });
 
 /*
- * Update data base item
- */
-const patch = (url, newItemProperty) =>
-  axios
-    .patch(url, newItemProperty)
-    .then()
-    .catch((error) => {
-      throw error;
-    });
-
-/*
  * Delete data base item
  */
 const del = (url) =>
@@ -46,4 +44,4 @@ const del = (url) =>
       throw error;
     });
 
-export default { post, get, patch, del };
+export default { post, get, del };

@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 
 import Filter from "./Filter";
 
-import contactsActions from "../../redux/contacts/contactsActions";
-import contactsSelectors from "../../redux/contacts/contactsSelectors";
-import themeSelectors from "../../redux/theme/themeSelectors";
+import { contactsActions, contactsSelectors } from "../../redux/contacts";
+import { themeSelectors } from "../../redux/theme";
 
 const mapStateToProps = (state) => {
   return {

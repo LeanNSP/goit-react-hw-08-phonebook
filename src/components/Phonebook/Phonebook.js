@@ -8,9 +8,7 @@ import Switch from "../Switch/SwitchContainer";
 import styles from "./Phonebook.module.css";
 import "./animationPhonebook.css";
 
-const Phonebook = ({ theme, isLoadingTheme, isError, children }) => {
-  const notifyClass =
-    theme === "light" ? styles.notify_light : styles.notify_dark;
+const Phonebook = ({ theme, isError, children }) => {
   const phonebookClass =
     theme === "light" ? styles.phonebook_light : styles.phonebook_dark;
   const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
@@ -51,13 +49,7 @@ const Phonebook = ({ theme, isLoadingTheme, isError, children }) => {
           timeout={350}
           unmountOnExit
         >
-          {isLoadingTheme ? (
-            <div className={notifyClass} theme={theme}>
-              Loading theme...
-            </div>
-          ) : (
-            <Switch />
-          )}
+          <Switch />
         </CSSTransition>
         {children}
       </div>
@@ -68,7 +60,6 @@ const Phonebook = ({ theme, isLoadingTheme, isError, children }) => {
 Phonebook.propTypes = {
   state: PropTypes.exact({
     theme: PropTypes.string.isRequired,
-    isLoadingTheme: PropTypes.func.isRequired,
   }),
 };
 
