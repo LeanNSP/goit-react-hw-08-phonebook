@@ -1,0 +1,19 @@
+.LoginPage-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(2);
+}
+
+.LoginPage-slideIn-appear-done {
+  opacity: 1;
+  transition: all 350ms linear;
+}
+
+.LoginForm-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.LoginForm-slideIn-appear-done {
+  opacity: 1;
+  transition: all 350ms linear;
+}

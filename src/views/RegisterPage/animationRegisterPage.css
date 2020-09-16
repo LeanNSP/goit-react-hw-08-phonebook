@@ -1,0 +1,19 @@
+.RegisterPage-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(2);
+}
+
+.RegisterPage-slideIn-appear-done {
+  opacity: 1;
+  transition: all 350ms linear;
+}
+
+.RegisterForm-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.RegisterForm-slideIn-appear-done {
+  opacity: 1;
+  transition: all 350ms linear;
+}

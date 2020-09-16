@@ -10,9 +10,6 @@ import { store, persistor } from "./redux/store";
 
 import "./style.css";
 
-/*
- * Start magic =)
- */
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

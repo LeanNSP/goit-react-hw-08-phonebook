@@ -26,16 +26,10 @@ class ContactFormContainer extends Component {
 
   state = { ...INITIAL_STATE };
 
-  /*
-   * Processing form input
-   */
   formInputsChangeHandler = ({ name, value }) => {
     this.setState({ [name]: value });
   };
 
-  /*
-   * Processing form submit
-   */
   submitHandler = (e) => {
     e.preventDefault();
 
@@ -50,9 +44,6 @@ class ContactFormContainer extends Component {
     this.clearForm();
   };
 
-  /*
-   * Creating a contact
-   */
   createContact() {
     const { name, number } = this.state;
     return {
@@ -61,18 +52,12 @@ class ContactFormContainer extends Component {
     };
   }
 
-  /*
-   * Checks is there such a name in contacts
-   */
   isSuchContact = () => {
     return this.props.contacts.find(
       ({ name }) => name.toLowerCase() === this.state.name.toLowerCase()
     );
   };
 
-  /*
-   * Clearing a form
-   */
   clearForm = () => {
     this.setState({ ...INITIAL_STATE });
   };

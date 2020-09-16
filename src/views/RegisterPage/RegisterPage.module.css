@@ -1,0 +1,50 @@
+.title {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.title_light {
+  composes: title;
+  color: rgb(33, 33, 33);
+}
+
+.title_dark {
+  composes: title;
+  color: rgb(255, 255, 210);
+}
+
+.text {
+  margin: 0;
+}
+
+.text_light {
+  composes: text;
+  color: rgb(33, 33, 33);
+}
+
+.text_dark {
+  composes: text;
+  color: rgb(255, 255, 210);
+}
+
+.link {
+  font-weight: 600;
+}
+
+.link_light {
+  composes: link;
+  color: rgb(0, 171, 171);
+}
+
+.link_dark {
+  composes: link;
+  color: rgb(0, 250, 250);
+}
+
+.active_link {
+  color: rgb(214, 218, 0);
+}
+
+.link:hover {
+  color: rgb(0, 215, 0);
+}

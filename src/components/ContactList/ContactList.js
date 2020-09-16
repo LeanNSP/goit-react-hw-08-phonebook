@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import ContactListItem from "../ContactListItem/ContactListItemContainer";
+import ContactListItem from "./ContactListItemContainer";
 
 import styles from "./ContactList.module.css";
 import "./animationContactList.css";

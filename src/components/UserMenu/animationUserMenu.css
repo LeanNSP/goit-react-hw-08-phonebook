@@ -1,0 +1,9 @@
+.UserMenu-slideIn-appear-active {
+  opacity: 0;
+  transform: scale(2);
+}
+
+.UserMenu-slideIn-appear-done {
+  opacity: 1;
+  transition: all 450ms linear;
+}

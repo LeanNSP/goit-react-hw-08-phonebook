@@ -4,27 +4,23 @@ import PropTypes from "prop-types";
 
 import App from "./App";
 
-import { contactsOperations } from "../redux/contacts";
 import { themeSelectors } from "../redux/theme";
 import { authOperation } from "../redux/auth";
 
 class AppContainer extends Component {
   static propTypes = {
     theme: PropTypes.string.isRequired,
-    onFetchContacts: PropTypes.func.isRequired,
     onGetCurrentUser: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    const { onGetCurrentUser, onFetchContacts } = this.props;
-    onGetCurrentUser(onFetchContacts);
-    // this.props.onFetchContacts();
+    this.props.onGetCurrentUser();
   }
 
   render() {
-    const { theme, isAuthenticated } = this.props;
+    const { theme } = this.props;
 
-    return <App theme={theme} isAuthenticated={isAuthenticated} />;
+    return <App theme={theme} />;
   }
 }
 
@@ -35,7 +31,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  onFetchContacts: contactsOperations.fetchContacts,
   onGetCurrentUser: authOperation.getCurrentUser,
 };
 

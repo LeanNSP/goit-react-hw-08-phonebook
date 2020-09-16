@@ -27,9 +27,7 @@ const Contacts = ({ contacts, theme, isLoadingContact, children }) => {
           timeout={350}
           unmountOnExit
         >
-          <h2 className={titleClass} theme={theme}>
-            Contacts
-          </h2>
+          <h2 className={titleClass}>Contacts</h2>
         </CSSTransition>
         {children}
         {isLoadingContact && (
@@ -48,7 +46,13 @@ const Contacts = ({ contacts, theme, isLoadingContact, children }) => {
 };
 
 Contacts.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
   theme: PropTypes.string.isRequired,
   isLoadingContact: PropTypes.bool.isRequired,
 };

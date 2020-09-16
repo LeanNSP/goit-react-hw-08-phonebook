@@ -58,9 +58,8 @@ const Phonebook = ({ theme, isError, children }) => {
 };
 
 Phonebook.propTypes = {
-  state: PropTypes.exact({
-    theme: PropTypes.string.isRequired,
-  }),
+  theme: PropTypes.string.isRequired,
+  isError: PropTypes.string,
 };
 
 export default Phonebook;

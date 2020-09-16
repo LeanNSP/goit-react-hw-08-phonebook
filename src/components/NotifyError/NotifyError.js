@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./NotifyError.module.css";
 
@@ -14,6 +15,12 @@ const NotifyError = ({ isError, theme, onClose }) => {
       </button>
     </div>
   );
+};
+
+NotifyError.propTypes = {
+  theme: PropTypes.string.isRequired,
+  isError: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default NotifyError;

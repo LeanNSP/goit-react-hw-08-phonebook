@@ -38,7 +38,7 @@ const logOut = () => (dispatch) => {
     .catch(({ message }) => dispatch(authActions.logoutError(message)));
 };
 
-const getCurrentUser = (onFetchContacts) => (dispatch, getState) => {
+const getCurrentUser = () => (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
@@ -55,7 +55,6 @@ const getCurrentUser = (onFetchContacts) => (dispatch, getState) => {
       .catch(({ message }) =>
         dispatch(authActions.getCurrentUserError(message))
       );
-    onFetchContacts();
   }
 };
 
