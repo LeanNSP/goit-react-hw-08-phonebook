@@ -7,25 +7,25 @@ import PositionedSpinner from "./PositionedSpinner/PositionedSpinnerContainer";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
-import routes from "../routes";
+import routes from "../routes/routes";
 
 import styles from "./App.module.css";
 
 const AsyncLoginPage = lazy(() =>
   import(
-    "../views/LoginPage/LoginPageContainer" /* webpackChunkName: "login-page" */
+    "./views/LoginPage/LoginPageContainer" /* webpackChunkName: "login-page" */
   )
 );
 
 const AsyncRegisterPage = lazy(() =>
   import(
-    "../views/RegisterPage/RegisterPageContainer" /* webpackChunkName: "register-page" */
+    "./views/RegisterPage/RegisterPageContainer" /* webpackChunkName: "register-page" */
   )
 );
 
 const AsyncContactPage = lazy(() =>
   import(
-    "../views/ContactPage/ContactPageContainer" /* webpackChunkName: "contact-page" */
+    "./views/ContactPage/ContactPageContainer" /* webpackChunkName: "contact-page" */
   )
 );
 

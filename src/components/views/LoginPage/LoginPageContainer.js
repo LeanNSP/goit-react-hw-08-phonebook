@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import LoginPage from "./LoginPage";
 
-import { themeSelectors } from "../../redux/theme";
+import { themeSelectors } from "../../../redux/theme";
 
 const mapStateToProps = (state) => {
   return {

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import UserMenu from "../../components/UserMenu/UserMenuContainer";
-import ContactForm from "../../components/ContactForm/ContactFormContainer";
-import Contacts from "../../components/Contacts/ContactsContainer";
-import Filter from "../../components/Filter/FilterContainer";
-import ContactList from "../../components/ContactList/ContactListContainer";
+import UserMenu from "../../UserMenu/UserMenuContainer";
+import ContactForm from "../../ContactForm/ContactFormContainer";
+import Contacts from "../../Contacts/ContactsContainer";
+import Filter from "../../Filter/FilterContainer";
+import ContactList from "../../ContactList/ContactListContainer";
 
 const ContactPage = ({ isAuthenticated }) => {
   return (

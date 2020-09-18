@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
 
-import LoginForm from "../../components/LoginForm/LoginFormContainer";
+import RegisterForm from "../../RegisterForm/RegisterFormContainer";
 
-import routes from "../../routes";
+import routes from "../../../routes/routes";
 
-import styles from "./LoginPage.module.css";
-import "./animationLoginPage.css";
+import styles from "./RegisterPage.module.css";
+import "./animationRegisterPage.css";
 
-const LoginPage = ({ theme }) => {
-  const { registerPage } = routes;
+const RegisterPage = ({ theme }) => {
+  const { loginPage } = routes;
   const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
   const textClass = theme === "light" ? styles.text_light : styles.text_dark;
   const linkClass = theme === "light" ? styles.link_light : styles.link_dark;
@@ -21,37 +21,37 @@ const LoginPage = ({ theme }) => {
       <CSSTransition
         in={true}
         appear={true}
-        classNames="LoginPage-slideIn"
+        classNames="RegisterPage-slideIn"
         timeout={350}
         unmountOnExit
       >
-        <h2 className={titleClass}>Authorisation, please!</h2>
+        <h2 className={titleClass}>Registered, please!</h2>
       </CSSTransition>
       <CSSTransition
         in={true}
         appear={true}
-        classNames="LoginForm-slideIn"
+        classNames="RegisterForm-slideIn"
         timeout={350}
         unmountOnExit
       >
-        <LoginForm />
+        <RegisterForm />
       </CSSTransition>
       <p className={textClass}>
-        Non account?{" "}
+        Registered?{" "}
         <NavLink
           className={linkClass}
           activeClassName={styles.active_link}
-          to={registerPage}
+          to={loginPage}
         >
-          Register!
+          Log In!
         </NavLink>
       </p>
     </>
   );
 };
 
-LoginPage.propTypes = {
+RegisterPage.propTypes = {
   theme: PropTypes.string.isRequired,
 };
 
-export default LoginPage;
+export default RegisterPage;

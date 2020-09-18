@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 import ContactPage from "./ContactPage";
 
-import { authSelectors } from "../../redux/auth";
-import { contactsOperations } from "../../redux/contacts";
+import { authSelectors } from "../../../redux/auth";
+import { contactsOperations } from "../../../redux/contacts";
 
 class ContactPageContainer extends Component {
   static propTypes = {
