@@ -11,37 +11,32 @@ export const tokenToHeader = {
   },
 };
 
-/*
- * Create data base item
- */
-const post = (url, item = null) =>
-  axios
-    .post(url, item)
-    .then(({ data }) => data)
-    .catch((error) => {
-      throw error;
-    });
+const post = async (url, item = null) => {
+  try {
+    const { data } = await axios.post(url, item);
 
-/*
- * Read data base items
- */
-const get = (url) =>
-  axios
-    .get(url)
-    .then(({ data }) => data)
-    .catch((error) => {
-      throw error;
-    });
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 
-/*
- * Delete data base item
- */
-const del = (url) =>
-  axios
-    .delete(url)
-    .then()
-    .catch((error) => {
-      throw error;
-    });
+const get = async (url) => {
+  try {
+    const { data } = await axios.get(url);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const del = async (url) => {
+  try {
+    await axios.delete(url);
+  } catch (error) {
+    throw error;
+  }
+};
 
 export default { post, get, del };

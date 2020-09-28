@@ -2,37 +2,40 @@ import { contactsActions } from "./";
 
 import fetchDB from "../../services/fetchDB";
 
-const addContact = (contact) => (dispatch) => {
+const addContact = (contact) => async (dispatch) => {
   dispatch(contactsActions.addContactRequest());
 
-  fetchDB
-    .post("/contacts", contact)
-    .then((data) => {
-      dispatch(contactsActions.addContactSuccess(data));
-    })
-    .catch(({ message }) => dispatch(contactsActions.addContactError(message)));
+  try {
+    const data = await fetchDB.post("/contacts", contact);
+
+    dispatch(contactsActions.addContactSuccess(data));
+  } catch (error) {
+    dispatch(contactsActions.addContactError(error.message));
+  }
 };
 
-const fetchContacts = () => (dispatch) => {
+const fetchContacts = () => async (dispatch) => {
   dispatch(contactsActions.fetchContactsRequest());
 
-  fetchDB
-    .get("/contacts")
-    .then((data) => dispatch(contactsActions.fetchContactsSuccess(data)))
-    .catch(({ message }) =>
-      dispatch(contactsActions.fetchContactsError(message))
-    );
+  try {
+    const data = await fetchDB.get("/contacts");
+
+    dispatch(contactsActions.fetchContactsSuccess(data));
+  } catch (error) {
+    dispatch(contactsActions.fetchContactsError(error.message));
+  }
 };
 
-const removeContact = (id) => (dispatch) => {
+const removeContact = (id) => async (dispatch) => {
   dispatch(contactsActions.removeContactRequest());
 
-  fetchDB
-    .del(`/contacts/${id}`)
-    .then(() => dispatch(contactsActions.removeContactSuccess(id)))
-    .catch(({ message }) =>
-      dispatch(contactsActions.removeContactError(message))
-    );
+  try {
+    await fetchDB.del(`/contacts/${id}`);
+
+    dispatch(contactsActions.removeContactSuccess(id));
+  } catch (error) {
+    dispatch(contactsActions.removeContactError(error.message));
+  }
 };
 
 export default {

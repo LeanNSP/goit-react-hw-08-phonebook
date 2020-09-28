@@ -2,43 +2,46 @@ import { authActions } from "./";
 
 import fetchDB, { tokenToHeader } from "../../services/fetchDB";
 
-const register = (credentials) => (dispatch) => {
+const register = (credentials) => async (dispatch) => {
   dispatch(authActions.registerRequest());
 
-  fetchDB
-    .post("/users/signup", credentials)
-    .then((data) => {
-      tokenToHeader.set(data.token);
-      dispatch(authActions.registerSuccess(data));
-    })
-    .catch(({ message }) => dispatch(authActions.registerError(message)));
+  try {
+    const data = await fetchDB.post("/users/signup", credentials);
+
+    tokenToHeader.set(data.token);
+    dispatch(authActions.registerSuccess(data));
+  } catch (error) {
+    dispatch(authActions.registerError(error.message));
+  }
 };
 
-const logIn = (credentials) => (dispatch) => {
+const logIn = (credentials) => async (dispatch) => {
   dispatch(authActions.loginRequest());
 
-  fetchDB
-    .post("/users/login", credentials)
-    .then((data) => {
-      tokenToHeader.set(data.token);
-      dispatch(authActions.loginSuccess(data));
-    })
-    .catch(({ message }) => dispatch(authActions.loginError(message)));
+  try {
+    const data = await fetchDB.post("/users/login", credentials);
+
+    tokenToHeader.set(data.token);
+    dispatch(authActions.loginSuccess(data));
+  } catch (error) {
+    dispatch(authActions.loginError(error.message));
+  }
 };
 
-const logOut = () => (dispatch) => {
+const logOut = () => async (dispatch) => {
   dispatch(authActions.logoutRequest());
 
-  fetchDB
-    .post("/users/logout")
-    .then(() => {
-      tokenToHeader.unset();
-      dispatch(authActions.logoutSuccess());
-    })
-    .catch(({ message }) => dispatch(authActions.logoutError(message)));
+  try {
+    await fetchDB.post("/users/logout");
+
+    tokenToHeader.unset();
+    dispatch(authActions.logoutSuccess());
+  } catch (error) {
+    dispatch(authActions.logoutError(error.message));
+  }
 };
 
-const getCurrentUser = () => (dispatch, getState) => {
+const getCurrentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
@@ -47,14 +50,13 @@ const getCurrentUser = () => (dispatch, getState) => {
     tokenToHeader.set(persistedToken);
     dispatch(authActions.getCurrentUserRequest());
 
-    fetchDB
-      .get("/users/current")
-      .then((data) => {
-        dispatch(authActions.getCurrentUserSuccess(data));
-      })
-      .catch(({ message }) =>
-        dispatch(authActions.getCurrentUserError(message))
-      );
+    try {
+      const data = await fetchDB.get("/users/current");
+
+      dispatch(authActions.getCurrentUserSuccess(data));
+    } catch (error) {
+      dispatch(authActions.getCurrentUserError(error.message));
+    }
   }
 };
 

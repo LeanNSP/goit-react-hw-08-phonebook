@@ -22,8 +22,8 @@ const ContactListItem = ({ name, number, theme, onRemove }) => {
 };
 
 ContactListItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  number: PropTypes.string,
   theme: PropTypes.string.isRequired,
   onRemove: PropTypes.func.isRequired,
 };

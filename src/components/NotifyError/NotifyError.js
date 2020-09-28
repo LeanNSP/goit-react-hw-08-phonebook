@@ -19,7 +19,7 @@ const NotifyError = ({ isError, theme, onClose }) => {
 
 NotifyError.propTypes = {
   theme: PropTypes.string.isRequired,
-  isError: PropTypes.string.isRequired,
+  isError: PropTypes.string,
   onClose: PropTypes.func.isRequired,
 };
 
