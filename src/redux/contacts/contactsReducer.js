@@ -17,6 +17,7 @@ const itemsReducer = createReducer([], {
   [contactsActions.addContactSuccess]: addContact,
   [contactsActions.fetchContactsSuccess]: fetchContacts,
   [contactsActions.removeContactSuccess]: removeContact,
+  [contactsActions.clearContactsItems]: () => [],
 });
 
 const filterReducer = createReducer("", {

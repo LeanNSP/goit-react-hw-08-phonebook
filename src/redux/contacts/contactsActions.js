@@ -12,6 +12,8 @@ const removeContactRequest = createAction("contacts/removeRequest");
 const removeContactSuccess = createAction("contacts/removeSuccess");
 const removeContactError = createAction("contacts/removeError");
 
+const clearContactsItems = createAction("contacts/clearContactsItems");
+
 const filterInputsChangeHandler = createAction(
   "filter/filterInputsChangeHandler"
 );
@@ -26,5 +28,6 @@ export default {
   removeContactRequest,
   removeContactSuccess,
   removeContactError,
+  clearContactsItems,
   filterInputsChangeHandler,
 };

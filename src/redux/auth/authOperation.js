@@ -1,4 +1,5 @@
 import { authActions } from "./";
+import { contactsActions } from "../contacts/";
 
 import fetchDB, { tokenToHeader } from "../../services/fetchDB";
 
@@ -35,6 +36,7 @@ const logOut = () => async (dispatch) => {
     await fetchDB.post("/users/logout");
 
     tokenToHeader.unset();
+    dispatch(contactsActions.clearContactsItems());
     dispatch(authActions.logoutSuccess());
   } catch (error) {
     dispatch(authActions.logoutError(error.message));
