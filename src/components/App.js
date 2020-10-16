@@ -9,7 +9,7 @@ import PublicRoute from "./PublicRoute";
 
 import routes from "../routes/routes";
 
-import styles from "./App.module.css";
+import s from "./App.module.css";
 
 const AsyncLoginPage = lazy(() =>
   import(
@@ -31,7 +31,7 @@ const AsyncContactPage = lazy(() =>
 
 const App = ({ theme }) => {
   const { loginPage, registerPage, contactPage } = routes;
-  const layoutClass = theme === "light" ? styles.light : styles.dark;
+  const layoutClass = theme === "light" ? s.light : s.dark;
 
   return (
     <div className={layoutClass}>

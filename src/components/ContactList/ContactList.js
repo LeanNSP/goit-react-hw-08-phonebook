@@ -4,12 +4,12 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import ContactListItem from "./ContactListItemContainer";
 
-import styles from "./ContactList.module.css";
+import s from "./ContactList.module.css";
 import "./animationContactList.css";
 
 const ContactList = ({ contacts }) => {
   return (
-    <TransitionGroup component="ul" className={styles.list}>
+    <TransitionGroup component="ul" className={s.list}>
       {contacts.map(({ id }) => (
         <CSSTransition classNames="ListItem-slideIn" timeout={350} key={id}>
           <ContactListItem id={id} />

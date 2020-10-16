@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./NotifyError.module.css";
+import s from "./NotifyError.module.css";
 
 const NotifyError = ({ isError, theme, onClose }) => {
   const notifyClass =
-    theme === "light" ? styles.notify_light : styles.notify_dark;
+    theme === "light" ? s.notify_light : s.notify_dark;
 
   return (
     <div className={notifyClass} theme={theme}>

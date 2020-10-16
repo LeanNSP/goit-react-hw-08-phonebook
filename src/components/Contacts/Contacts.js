@@ -7,13 +7,13 @@ import Spinner from "react-spinner-material";
 import Filter from "../Filter/FilterContainer";
 import ContactList from "../ContactList/ContactListContainer";
 
-import styles from "./Contacts.module.css";
+import s from "./Contacts.module.css";
 import "./animationContacts.css";
 
 const Contacts = ({ contacts, theme, isLoadingContact }) => {
   const spinnerColor =
     theme === "light" ? "rgb(180, 180, 180)" : "rgb(255, 255, 210)";
-  const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
+  const titleClass = theme === "light" ? s.title_light : s.title_dark;
 
   return (
     <CSSTransition
@@ -35,7 +35,7 @@ const Contacts = ({ contacts, theme, isLoadingContact }) => {
         <Filter />
         <ContactList />
         {isLoadingContact && (
-          <div className={styles.spinner}>
+          <div className={s.spinner}>
             <Spinner
               radius={30}
               color={spinnerColor}

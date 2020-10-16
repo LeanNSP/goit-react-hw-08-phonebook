@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./LoginForm.module.css";
+import s from "./LoginForm.module.css";
 
 const LoginForm = ({ email, password, theme, onSubmit, onChange }) => {
-  const labelClass = theme === "light" ? styles.label_light : styles.label_dark;
-  const inputClass = theme === "light" ? styles.input_light : styles.input_dark;
-  const initBtnClasses = [styles.button];
+  const labelClass = theme === "light" ? s.label_light : s.label_dark;
+  const inputClass = theme === "light" ? s.input_light : s.input_dark;
+  const initBtnClasses = [s.button];
   const btnClasses =
     theme === "light"
-      ? [...initBtnClasses, styles.button_light]
-      : [...initBtnClasses, styles.button_dark];
+      ? [...initBtnClasses, s.button_light]
+      : [...initBtnClasses, s.button_dark];
 
   return (
-    <form className={styles.form} onSubmit={onSubmit}>
+    <form className={s.form} onSubmit={onSubmit}>
       <label className={labelClass}>
         E-mail
         <input

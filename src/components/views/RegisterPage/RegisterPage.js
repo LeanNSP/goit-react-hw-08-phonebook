@@ -7,14 +7,14 @@ import RegisterForm from "../../RegisterForm/RegisterFormContainer";
 
 import routes from "../../../routes/routes";
 
-import styles from "./RegisterPage.module.css";
+import s from "./RegisterPage.module.css";
 import "./animationRegisterPage.css";
 
 const RegisterPage = ({ theme }) => {
   const { loginPage } = routes;
-  const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
-  const textClass = theme === "light" ? styles.text_light : styles.text_dark;
-  const linkClass = theme === "light" ? styles.link_light : styles.link_dark;
+  const titleClass = theme === "light" ? s.title_light : s.title_dark;
+  const textClass = theme === "light" ? s.text_light : s.text_dark;
+  const linkClass = theme === "light" ? s.link_light : s.link_dark;
 
   return (
     <>
@@ -40,7 +40,7 @@ const RegisterPage = ({ theme }) => {
         Registered?{" "}
         <NavLink
           className={linkClass}
-          activeClassName={styles.active_link}
+          activeClassName={s.active_link}
           to={loginPage}
         >
           Log In!

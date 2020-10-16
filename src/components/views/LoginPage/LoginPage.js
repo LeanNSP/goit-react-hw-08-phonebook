@@ -7,14 +7,14 @@ import LoginForm from "../../LoginForm/LoginFormContainer";
 
 import routes from "../../../routes/routes";
 
-import styles from "./LoginPage.module.css";
+import s from "./LoginPage.module.css";
 import "./animationLoginPage.css";
 
 const LoginPage = ({ theme }) => {
   const { registerPage } = routes;
-  const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
-  const textClass = theme === "light" ? styles.text_light : styles.text_dark;
-  const linkClass = theme === "light" ? styles.link_light : styles.link_dark;
+  const titleClass = theme === "light" ? s.title_light : s.title_dark;
+  const textClass = theme === "light" ? s.text_light : s.text_dark;
+  const linkClass = theme === "light" ? s.link_light : s.link_dark;
 
   return (
     <>
@@ -40,7 +40,7 @@ const LoginPage = ({ theme }) => {
         Non account?{" "}
         <NavLink
           className={linkClass}
-          activeClassName={styles.active_link}
+          activeClassName={s.active_link}
           to={registerPage}
         >
           Register!

@@ -2,16 +2,16 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
 
-import styles from "./UserMenu.module.css";
+import s from "./UserMenu.module.css";
 import "./animationUserMenu.css";
 
 const UserMenu = ({ name, theme, onLogout }) => {
-  const spanClass = theme === "light" ? styles.span_light : styles.span_dark;
-  const initBtnClasses = [styles.button];
+  const spanClass = theme === "light" ? s.span_light : s.span_dark;
+  const initBtnClasses = [s.button];
   const btnClasses =
     theme === "light"
-      ? [...initBtnClasses, styles.button_light]
-      : [...initBtnClasses, styles.button_dark];
+      ? [...initBtnClasses, s.button_light]
+      : [...initBtnClasses, s.button_dark];
 
   return (
     <CSSTransition
@@ -21,7 +21,7 @@ const UserMenu = ({ name, theme, onLogout }) => {
       timeout={450}
       unmountOnExit
     >
-      <div className={styles.wrapper}>
+      <div className={s.wrapper}>
         <span className={spanClass}>Welcome, {name}</span>
         <button
           className={btnClasses.join(" ")}

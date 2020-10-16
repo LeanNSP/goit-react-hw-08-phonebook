@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./ContactList.module.css";
+import s from "./ContactList.module.css";
 
 const ContactListItem = ({ name, number, theme, onRemove }) => {
-  const itemClass = theme === "light" ? styles.item_light : styles.item_dark;
-  const initBtnClasses = [styles.button];
+  const itemClass = theme === "light" ? s.item_light : s.item_dark;
+  const initBtnClasses = [s.button];
   const btnClasses =
     theme === "light"
-      ? [...initBtnClasses, styles.button_light]
-      : [...initBtnClasses, styles.button_dark];
+      ? [...initBtnClasses, s.button_light]
+      : [...initBtnClasses, s.button_dark];
 
   return (
     <li className={itemClass}>

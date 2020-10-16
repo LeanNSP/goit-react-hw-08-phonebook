@@ -5,13 +5,13 @@ import { CSSTransition } from "react-transition-group";
 import NotifyError from "../NotifyError/NotifyErrorContainer";
 import Switch from "../Switch/SwitchContainer";
 
-import styles from "./Phonebook.module.css";
+import s from "./Phonebook.module.css";
 import "./animationPhonebook.css";
 
 const Phonebook = ({ theme, isError, children }) => {
   const phonebookClass =
-    theme === "light" ? styles.phonebook_light : styles.phonebook_dark;
-  const titleClass = theme === "light" ? styles.title_light : styles.title_dark;
+    theme === "light" ? s.phonebook_light : s.phonebook_dark;
+  const titleClass = theme === "light" ? s.title_light : s.title_dark;
 
   return (
     <CSSTransition
@@ -33,7 +33,7 @@ const Phonebook = ({ theme, isError, children }) => {
             Phonebook
           </h1>
         </CSSTransition>
-        <div className={styles.border_top} />
+        <div className={s.border_top} />
         <CSSTransition
           in={isError !== null}
           classNames="NotifyError-slideIn"

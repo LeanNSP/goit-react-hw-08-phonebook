@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransition } from "react-transition-group";
 
-import styles from "./Filter.module.css";
+import s from "./Filter.module.css";
 import "./animationFilter.css";
 
 const Filter = ({ contacts, filter, theme, onChange }) => {
-  const labelClass = theme === "light" ? styles.label_light : styles.label_dark;
-  const inputClass = theme === "light" ? styles.input_light : styles.input_dark;
+  const labelClass = theme === "light" ? s.label_light : s.label_dark;
+  const inputClass = theme === "light" ? s.input_light : s.input_dark;
 
   return (
     <CSSTransition
