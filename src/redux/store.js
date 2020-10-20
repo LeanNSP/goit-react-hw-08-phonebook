@@ -19,7 +19,7 @@ import { errorReducer } from "./error";
 
 const rootPersistConfig = {
   key: "root",
-  storage: storage,
+  storage,
   whitelist: ["theme"],
 };
 
